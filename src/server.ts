@@ -5,7 +5,8 @@ const server = fastify({ logger: true });
 
 // Para deixar qualquer pessoa consumir a api, ou mais de um domínio
 server.register(cors, {
-        origin: "127.0.0.1:3333",
+        // origin: "127.0.0.1:3333",
+        origin: "*",
         methods: ["GET", "POST"],
     }
 
