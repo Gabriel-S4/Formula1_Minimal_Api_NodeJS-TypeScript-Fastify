@@ -131,6 +131,11 @@ const drivers = [
     { id: 50, name: "Oliver Bearman", team: "Ferrari" }
 ];
 
+server.get('/', async (req, res) => {
+    res.type("application/json").code(200)
+    return { message: "API online :)" };
+})
+
 server.get('/teams', async (req, res) => {
     res.type("application/json").code(200)
     return { teams };
