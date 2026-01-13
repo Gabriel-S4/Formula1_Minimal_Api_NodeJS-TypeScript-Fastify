@@ -166,6 +166,18 @@ server.get<{Params: DriveParams}>('/drivers/:id', async (req,res) => {
     console.log(drive)
 })
 
-server.listen({ port: Number(process.env.PORT) }, () => {
-    console.log(`Servidor Iniciado na Porta ${process.env.PORT}`)
-})
+// server.listen({ port: Number(process.env.PORT) }, () => {
+//     console.log(`Servidor Iniciado na Porta ${process.env.PORT}`)
+// })
+
+const port = Number(process.env.PORT) || 3333;
+
+server.listen(
+  {
+    port,
+    host: '0.0.0.0'
+  },
+  () => {
+    console.log(`Servidor iniciado na porta ${port}`);
+  }
+);
