@@ -148,6 +148,7 @@ interface DriveParams {
 server.get<{Params: DriveParams}>('/drivers/:id', async (req,res) => {
     const id = parseInt(req.params.id)
     const drive = drivers.find(d => d.id === id)
+    console.log(req.params)
     if(!drive){
         res.type('application/json').code(404);
         return { message: "Driver not found"}
@@ -155,6 +156,7 @@ server.get<{Params: DriveParams}>('/drivers/:id', async (req,res) => {
         res.type('application/json').code(202);
         return {drive}
     }
+
     console.log(drive)
 })
 
